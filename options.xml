@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Options>
+	
+    <Common>
+		
+        <ExchangePlacePath>E:\</ExchangePlacePath>
+		
+        <SwndFileName>swnd5.arc</SwndFileName>
+	
+    </Common>
+
+    <FTP>
+		
+        <Address>:365636:;3=</Address>
+		
+        <Login>rfnqwz:tdqtlns</Login>
+		
+        <Password>nr;&gt;&gt;555ufxx</Password>
+	
+    </FTP>	
+	
+    <MySQL>
+		
+        <Address>&gt;:3&lt;=378:36;&gt;</Address>
+                
+        <Port>8865</Port>
+                
+        <DatabaseName>rtsnytw7</DatabaseName>
+		
+        <User>wtty</User>
+		
+        <Password/>
+	
+    </MySQL>
+    
+    <DepartmentsList><item0>79</item0><item1>82</item1><item2>201</item2></DepartmentsList>
+
+</Options>
