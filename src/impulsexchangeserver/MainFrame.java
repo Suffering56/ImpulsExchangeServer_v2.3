@@ -49,9 +49,14 @@ public class MainFrame extends javax.swing.JFrame {
         monitorMainCallBtn = new javax.swing.JMenuItem();
         monitorAsssemblersCallBtn = new javax.swing.JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Impuls Exchange Server");
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         exchangePanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -88,6 +93,7 @@ public class MainFrame extends javax.swing.JFrame {
         });
 
         exitBtn.setText("Выход");
+        exitBtn.setEnabled(false);
         exitBtn.setFocusPainted(false);
         exitBtn.setMaximumSize(new java.awt.Dimension(161, 23));
         exitBtn.setMinimumSize(new java.awt.Dimension(161, 23));
@@ -399,12 +405,8 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_mySqlOptionsCallBtnActionPerformed
 
     private void exitCallBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitCallBtnActionPerformed
-        exitBtn.doClick();
-    }//GEN-LAST:event_exitCallBtnActionPerformed
-
-    private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
         System.exit(0);
-    }//GEN-LAST:event_exitBtnActionPerformed
+    }//GEN-LAST:event_exitCallBtnActionPerformed
 
     private void monitorMainCallBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_monitorMainCallBtnActionPerformed
         new FrameMonitorMain(this).setVisible(true);
@@ -413,6 +415,15 @@ public class MainFrame extends javax.swing.JFrame {
     private void monitorAsssemblersCallBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_monitorAsssemblersCallBtnActionPerformed
         new FrameMonitorAssemblers(this).setVisible(true);
     }//GEN-LAST:event_monitorAsssemblersCallBtnActionPerformed
+
+    private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_exitBtnActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        flashingTray.showTray();
+        this.setVisible(false);
+    }//GEN-LAST:event_formWindowClosing
 
     private final List<CurrentDepartment> departmentsList;
     private final List<CurrentDepartment> doPrintList;
